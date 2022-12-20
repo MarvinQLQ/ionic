@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Restaurantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let u of user" >
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12"><span>Nombre:</span> {{u.nombre}} </ion-col>
+          <ion-col size="12"><span>Cedula:</span> {{u.cedula}} </ion-col>
+          <ion-col size="12"><span>Rol:</span> {{u.rol}} </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

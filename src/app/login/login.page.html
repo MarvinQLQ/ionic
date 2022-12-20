@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+ 
+
+  <ion-card  >
+   
+    <ion-card-header>
+      <ion-card-title>Iniciar sesion</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+        <div>
+          <ion-item>
+            <ion-label position="floating">Cedula</ion-label>
+            <ion-input type="number" [(ngModel)]="cedula"></ion-input>
+          </ion-item>
+          <br>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input class="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+        </div>
+      <br>  <!-- [routerLink]="['/lobby']" -->
+      <div >
+      <ion-button (click)="login()" >
+        Ingresar
+      </ion-button>
+      <ion-button [routerLink]="['/registro']" >
+        Registrarse
+      </ion-button>
+
+    </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar></ion-toolbar>
+  
+</ion-footer>

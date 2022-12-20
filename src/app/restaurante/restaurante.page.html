@@ -1,0 +1,67 @@
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button  (click)="presentActionSheet()">
+          <ion-icon slot="start" name="menu-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content>
+  <ion-card *ngIf="formulario" >
+    <ion-card-header>
+      <ion-card-title>Restaurante</ion-card-title>
+    </ion-card-header>
+      <div>
+        <ion-item>
+          <ion-label position="floating">nombre</ion-label>
+          <ion-input [(ngModel)]="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Tipo</ion-label>
+          <ion-input [(ngModel)]="tipo"></ion-input>
+        </ion-item> 
+        <ion-item>
+          <ion-label position="floating">Horario</ion-label>
+          <ion-input [(ngModel)]="horario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telefono</ion-label>
+          <ion-input type="number"[(ngModel)]="telefono"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Propietario</ion-label>
+          <ion-input [(ngModel)]="propietario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="registrar()">
+            Nuevo restaurante
+          </ion-button>
+        </ion-item>
+      </div>
+      <br>
+  </ion-card>
+  <ion-card *ngFor="let r of restaurantes" >
+    <ion-card-header>
+      <ion-card-title><span>Nombre: </span>{{r.nombre}}  </ion-card-title>
+      <ion-card-subtitle> <span>Horario: </span>{{r.horario}} </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-label> <span>Telefono: </span>{{r.telefono}} </ion-label>
+      <hr>
+      <ion-label> <span>Tipo: </span>{{r.tipo}} </ion-label>
+      <hr>
+      <ion-label> <span>Propietario: </span>{{r.propietario}} </ion-label>
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="vistaFormulario()">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+  </ion-content>
